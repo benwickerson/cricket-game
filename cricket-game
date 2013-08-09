@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH << Dir.pwd
+
+require "lib/cricket-game.rb"
+
+CG.connect
+
+puts "Ready to go"

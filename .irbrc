@@ -1,4 +1,7 @@
-load 'cricket-game'
+load 'load.rb'
+
+@p = Player.first
+@c = Country.first
 
 class Object
   # Return only the methods not present on basic objects

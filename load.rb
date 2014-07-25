@@ -2,8 +2,6 @@
 
 $LOAD_PATH << Dir.pwd
 
-require "lib/cricket-game.rb"
-
-CG.connect
+load "bin/cricket-game"
 
 puts "Ready to go"

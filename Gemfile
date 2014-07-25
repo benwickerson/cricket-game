@@ -5,3 +5,4 @@ source "http://rubygems.org"
 gem "jeweler", "~> 1.8.4"
 gem 'activerecord'
 gem 'sqlite3'
+gem 'hirb'

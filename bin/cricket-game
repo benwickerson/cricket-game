@@ -1,7 +1,3 @@
 #!/usr/bin/env ruby
 
-require '/../lib/cricket-game'
-
-runner = CG::Runner.new(ARGV, STDIN, STOUT)
-runner.connect
-runner.run
+require 'lib/cricket-game'

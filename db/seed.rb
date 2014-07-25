@@ -6,14 +6,14 @@ Specialism.create!(name: "Bowler")
 Specialism.create!(name: "All-rounder")
 Specialism.create!(name: "Wicket-Keeper")
 
-Country.create!(country: "England")
-Country.create!(country: "Australia")
-Country.create!(country: "South Africa")
-Country.create!(country: "India")
-Country.create!(country: "New Zealand")
-Country.create!(country: "Pakistan")
-Country.create!(country: "Sri Lanka")
-Country.create!(country: "West Indies")
+Country.create!(text: "England")
+Country.create!(text: "Australia")
+Country.create!(text: "South Africa")
+Country.create!(text: "India")
+Country.create!(text: "New Zealand")
+Country.create!(text: "Pakistan")
+Country.create!(text: "Sri Lanka")
+Country.create!(text: "West Indies")
 
 CSV.foreach('db/players.csv', headers: true) do |row|
   row = Player.create!(
@@ -22,6 +22,21 @@ CSV.foreach('db/players.csv', headers: true) do |row|
     hand:           row[2],
     specialism_id:  row[3],
     country_id:     row[4]
+  )
+end
+
+CSV.foreach('db/umpires.csv', headers: true) do |row|
+  row = Umpire.create!(
+    name:           row[0],
+    country_id:     row[1],
+    total_matches:  row[2],
+    experience:     row[3]
+  )
+end
+
+CSV.foreach('db/positions.csv', headers: true) do |row|
+  row = F_position.create!(
+    text:           row[0]
   )
 end
 

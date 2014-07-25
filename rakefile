@@ -1,0 +1,21 @@
+namespace :db do
+  desc "check for DB and create if nessesary"
+  task :check do
+    if File.file?('db/cricket.db') == false
+      load 'load.rb'
+      load 'db/schema.rb'
+      load 'db/seed.rb'
+    else
+      puts "DB is already loaded"
+      puts "Do you want to reset the DB? (yes/no) **You will lose all information and data**"
+      confirm = STDIN.gets.chomp
+      confirm.downcase!
+      if confirm == "yes" || confirm == "y" 
+        File.delete('db/cricket.db')
+        load 'load.rb'
+        load 'db/schema.rb'
+        load 'db/seed.rb'
+      end
+    end
+  end
+end

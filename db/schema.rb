@@ -32,7 +32,7 @@ ActiveRecord::Schema.define do
   end
 
   create_table :countries do |table|
-    table.string    :country
+    table.string    :text
   end
 
   create_table :grounds do |table|
@@ -41,8 +41,8 @@ ActiveRecord::Schema.define do
     table.integer   :country_id
   end
 
-  create_table :fielding_positions do |table|
-    table.string    :position 
+  create_table :f_positions do |table|
+    table.string    :text 
   end
 
 ## - The game - ##
@@ -118,7 +118,8 @@ ActiveRecord::Schema.define do
 
   create_table :umpires do |table|
     table.string    :name
-    table.integer   :accuracy
+    table.integer   :country_id
+    table.integer   :total_matches
     table.integer   :experience
   end
 
